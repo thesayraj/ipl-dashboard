@@ -11,13 +11,13 @@ export const TeamPage = () => {
   const { teamName } = useParams();
 
   useEffect(() => {
-    const fetchMatches = async () => {
+    const fetchTeam = async () => {
       const response = await fetch(`http://localhost:8080/team/${teamName}`);
       const data = await response.json();
       // console.log(data);
       setTeam(data);
     };
-    fetchMatches();
+    fetchTeam();
   }, [teamName]);
 
   //useEffect(.., [])   passing empty array []   call this useEffect only when one of these things inside array change..
@@ -53,7 +53,7 @@ export const TeamPage = () => {
       ))}
 
 <div className="more-link">
-        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
+        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More &gt;</Link>
         </div>
     </div>
   );

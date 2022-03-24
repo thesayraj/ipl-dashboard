@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './TeamTile.scss';
 export const TeamTile = ({teamName}) => {
-
+// console.log("teamtile..");
 
     return (
         <div className="TeamTile">
