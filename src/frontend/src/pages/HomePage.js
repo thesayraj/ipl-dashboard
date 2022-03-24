@@ -10,8 +10,8 @@ export const HomePage = () => {
     useEffect(
         () => {
          (async () => {
-             // ${process.env.REACT_APP_API_ROOT_URL}/team
-            let response = await fetch(`http://localhost:8080/team/`);
+             //
+            let response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/`);
             let data = await response.json();
             setTeams(data);
 
@@ -24,17 +24,12 @@ export const HomePage = () => {
     );
 
 
-    // if (teams.length === 0) {
-    //     return <h1>Team Not Found!</h1>;
-    //   }
-    
 
     return (
         <div className="HomePage">
             <div className="header-section">
                 <h1 className="app-name"> IPL Dashboard</h1>
             </div>
-            {/* {console.log(teams)} */}
 
             <div className="team-grid">
 

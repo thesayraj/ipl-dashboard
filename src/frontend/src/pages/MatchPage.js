@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import { MatchDetailCard } from "../components/MatchDetailCard";
-import { MatchSmallCard } from "../components/MatchSmallCard";
 import { useParams } from "react-router-dom";
 
 import './MatchPage.scss';
@@ -9,11 +8,12 @@ import { YearSelector } from "../components/YearSelector";
 export const MatchPage = () => {
 
   const [matches, setMatches] = useState([]);
-  // const teamName = "Delhi Capitals";
   const { teamName, year } = useParams();
   useEffect(() => {
     const fetchMatches = async () => {
-      const response = await fetch(`http://localhost:8080/team/${teamName}/matches?year=${year}`);
+      
+      // http://localhost:8080/team
+      const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}/matches?year=${year}`);
       const data = await response.json();
       // console.log(data);
       setMatches(data);
@@ -35,7 +35,7 @@ export const MatchPage = () => {
     <h1 className="page-heading">{teamName} matches in {year}</h1>
 
       {matches.map((match) => (
-        <MatchDetailCard teamName={teamName} match={match} />
+        <MatchDetailCard key={match.id} teamName={teamName} match={match} />
       ))}
       </div>
 

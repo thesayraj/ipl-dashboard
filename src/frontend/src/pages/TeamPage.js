@@ -12,16 +12,18 @@ export const TeamPage = () => {
 
   useEffect(() => {
     const fetchTeam = async () => {
-      const response = await fetch(`http://localhost:8080/team/${teamName}`);
+
+      const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}`);
       const data = await response.json();
       // console.log(data);
       setTeam(data);
     };
     fetchTeam();
-  }, [teamName]);
+  },[teamName]);
 
   //useEffect(.., [])   passing empty array []   call this useEffect only when one of these things inside array change..
-  // we have empty arr [] so it initializes this useEffect only when the component loads for the first time
+  // if we have empty arr [] so it initializes this useEffect only when the component loads for the first time
+  
 
   if (!team || !team.teamName) {
     return <h1>Team Not Found!</h1>;
@@ -49,7 +51,7 @@ export const TeamPage = () => {
       </div>
 
       {team.matches.slice(1).map((match) => (
-        <MatchSmallCard teamName={team.teamName} match={match} />
+        <MatchSmallCard key={match.id} teamName={team.teamName} match={match} />
       ))}
 
 <div className="more-link">
