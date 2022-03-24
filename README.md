@@ -1,4 +1,15 @@
-![Home Page]<img src="https://github.com/thesayraj/ipl-dashboard/blob/master/images/ipldashhome.png" width="400" height="790">
+**Home Page**
+<br>
+<br>
+<img src="https://github.com/thesayraj/ipl-dashboard/blob/master/images/ipldashhome.png" width="500" height="400">
 
+<br>
+<br>
+<br>
+<br>
 
-![Team Page]<img src="https://github.com/thesayraj/ipl-dashboard/blob/master/images/team.png" width="400" height="790">
+**Team Page**
+<br>
+<br>
+
+<img src="https://github.com/thesayraj/ipl-dashboard/blob/master/images/team.png" width="500" height="400">
